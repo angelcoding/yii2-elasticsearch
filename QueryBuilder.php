@@ -97,6 +97,11 @@ class QueryBuilder extends \yii\base\Object
         } elseif (!empty($whereFilter)) {
             $parts['filter'] = $whereFilter;
         }
+        
+        // @todo make this similar to above?
+        if (!empty($query->postFilter)) {
+            $parts['post_filter'] = $query->postFilter;
+        }
 
         if (!empty($query->highlight)) {
             $parts['highlight'] = $query->highlight;
